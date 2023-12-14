@@ -5,26 +5,27 @@
   expat,
   fontconfig,
   freetype,
+  git,
+  glib,
+  gtk4,
   harfbuzz,
-  libpng,
-  pixman,
-  zlib,
   libGL,
   libX11,
   libXcursor,
   libXi,
   libXrandr,
-  glib,
-  gtk4,
   libadwaita,
   wrapGAppsHook4,
   gsettings-desktop-schemas,
-  git,
+  libpng,
   ncurses,
+  pixman,
   pkg-config,
+  xcbuild,
   zig_0_12,
   pandoc,
   revision ? "dirty",
+  zlib,
 }: let
   # The Zig hook has no way to select the release type without actual
   # overriding of the default flags.
@@ -95,6 +96,8 @@ in
       pkg-config
       zig012Hook
       wrapGAppsHook4
+    ] ++ lib.optionals stdenv.isDarwin [
+      xcbuild
     ];
 
     buildInputs =
@@ -133,6 +136,12 @@ in
     '';
 
     outputs = ["out" "terminfo" "shell_integration"];
+
+    postBuild = lib.optionalString stdenv.isDarwin ''
+      cd macos
+      AGREE=true xcodebuild
+      cp macos/build/Release/Ghostty.app $out/bin
+    '';
 
     postInstall = ''
       terminfo_src=${
