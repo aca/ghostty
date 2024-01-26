@@ -140,7 +140,7 @@ in
     postBuild = lib.optionalString stdenv.isDarwin ''
       cd macos
       AGREE=true xcodebuild
-      cp macos/build/Release/Ghostty.app $out/bin
+      cp macos/build/ReleaseLocal/Ghostty.app $out/bin
     '';
 
     postInstall = ''
