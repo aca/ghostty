@@ -608,6 +608,7 @@ pub fn updateFrame(
     state: *renderer.State,
     cursor_blink_visible: bool,
 ) !void {
+    log.info("==> Metal.updateFrame", .{});
     _ = surface;
 
     // Data we extract out of the critical area.
@@ -741,10 +742,12 @@ pub fn updateFrame(
             }
         }
     }
+    log.info("<== Metal.updateFrame", .{});
 }
 
 /// Draw the frame to the screen.
 pub fn drawFrame(self: *Metal, surface: *apprt.Surface) !void {
+    log.info("==> Metal.drawFrame", .{});
     _ = surface;
 
     // Wait for a buffer to be available.
@@ -913,6 +916,7 @@ pub fn drawFrame(self: *Metal, surface: *apprt.Surface) !void {
     buffer.msgSend(void, objc.sel("addCompletedHandler:"), .{block.context});
 
     buffer.msgSend(void, objc.sel("commit"), .{});
+    log.info("<== Metal.drawFrame", .{});
 }
 
 /// This is the block type used for the addCompletedHandler call.back.

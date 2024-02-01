@@ -731,7 +731,7 @@ pub fn printString(self: *Terminal, str: []const u8) !void {
 }
 
 pub fn print(self: *Terminal, c: u21) !void {
-    // log.debug("print={x} y={} x={}", .{ c, self.screen.cursor.y, self.screen.cursor.x });
+    log.debug("print={x} y={} x={}", .{ c, self.screen.cursor.y, self.screen.cursor.x });
 
     // If we're not on the main display, do nothing for now
     if (self.status_display != .main) return;

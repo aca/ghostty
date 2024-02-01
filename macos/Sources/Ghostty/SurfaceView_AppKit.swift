@@ -555,6 +555,7 @@ extension Ghostty {
         }
 
         override func keyDown(with event: NSEvent) {
+            Ghostty.logger.info("SurfaceView.keyDown")
             guard let surface = self.surface else {
                 self.interpretKeyEvents([event])
                 return
