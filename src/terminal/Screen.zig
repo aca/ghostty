@@ -3841,6 +3841,7 @@ test "Screen: scroll down from 0" {
     }
 }
 
+// X
 test "Screen: scrollback" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -3939,6 +3940,7 @@ test "Screen: scrollback" {
     }
 }
 
+// X
 test "Screen: scrollback with large delta" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -3968,6 +3970,7 @@ test "Screen: scrollback with large delta" {
     }
 }
 
+// X
 test "Screen: scrollback empty" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -3985,6 +3988,7 @@ test "Screen: scrollback empty" {
     }
 }
 
+// X
 test "Screen: scrollback doesn't move viewport if not at bottom" {
     const testing = std.testing;
     const alloc = testing.allocator;
