@@ -4262,6 +4262,7 @@ test "Screen: scroll and clear ignore blank lines" {
     }
 }
 
+// X - i don't think we need rowIterator
 test "Screen: history region with no scrollback" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -4286,6 +4287,7 @@ test "Screen: history region with no scrollback" {
     try testing.expect(count == 0);
 }
 
+// X - duplicated test above
 test "Screen: history region with scrollback" {
     const testing = std.testing;
     const alloc = testing.allocator;
