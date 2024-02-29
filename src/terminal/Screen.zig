@@ -5131,6 +5131,7 @@ test "Screen: promtpPath" {
     }
 }
 
+// X - we don't use this in new terminal
 test "Screen: scrollRegionUp single" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -5148,6 +5149,7 @@ test "Screen: scrollRegionUp single" {
     }
 }
 
+// X - we don't use this in new terminal
 test "Screen: scrollRegionUp same line" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -5165,6 +5167,7 @@ test "Screen: scrollRegionUp same line" {
     }
 }
 
+// X - we don't use this in new terminal
 test "Screen: scrollRegionUp single with pen" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -5189,6 +5192,7 @@ test "Screen: scrollRegionUp single with pen" {
     }
 }
 
+// X - we don't use this in new terminal
 test "Screen: scrollRegionUp multiple" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -5206,6 +5210,7 @@ test "Screen: scrollRegionUp multiple" {
     }
 }
 
+// X - we don't use this in new terminal
 test "Screen: scrollRegionUp multiple count" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -5223,6 +5228,7 @@ test "Screen: scrollRegionUp multiple count" {
     }
 }
 
+// X - we don't use this in new terminal
 test "Screen: scrollRegionUp count greater than available lines" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -5239,6 +5245,7 @@ test "Screen: scrollRegionUp count greater than available lines" {
         try testing.expectEqualStrings("1ABCD\n\n\n4ABCD", contents);
     }
 }
+// X - we don't use this in new terminal
 test "Screen: scrollRegionUp fills with pen" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -5263,6 +5270,7 @@ test "Screen: scrollRegionUp fills with pen" {
     }
 }
 
+// X - we don't use this in new terminal
 test "Screen: scrollRegionUp buffer wrap" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -5295,6 +5303,7 @@ test "Screen: scrollRegionUp buffer wrap" {
     }
 }
 
+// X - we don't use this in new terminal
 test "Screen: scrollRegionUp buffer wrap alternate" {
     const testing = std.testing;
     const alloc = testing.allocator;
@@ -5327,6 +5336,7 @@ test "Screen: scrollRegionUp buffer wrap alternate" {
     }
 }
 
+// X - we don't use this in new terminal
 test "Screen: scrollRegionUp buffer wrap alternative with extra lines" {
     const testing = std.testing;
     const alloc = testing.allocator;
