@@ -620,7 +620,7 @@ extension Ghostty {
                 self.interpretKeyEvents([event])
                 return
             }
-            
+            AppDelegate.logger.warning("[aca]keydown=\(event)")
             // We need to translate the mods (maybe) to handle configs such as option-as-alt
             let translationModsGhostty = Ghostty.eventModifierFlags(
                 mods: ghostty_surface_key_translation_mods(
@@ -676,6 +676,7 @@ extension Ghostty {
             // know if these events cleared it.
             let markedTextBefore = markedText.length > 0
             
+            AppDelegate.logger.warning("[aca]keydown.markedTextBefore=\(markedTextBefore)")
             self.interpretKeyEvents([translationEvent])
             
             // If we have text, then we've composed a character, send that down. We do this
@@ -695,10 +696,12 @@ extension Ghostty {
             // the preedit.
             if (markedText.length > 0 || markedTextBefore) {
                 handled = true
+                AppDelegate.logger.warning("[aca]keydown handle1")
                 keyAction(action, event: event, preedit: markedText.string)
             }
             
-            if (!handled) {
+            if (!handled || event.keyCode == 53) {
+                AppDelegate.logger.warning("[aca]keydown handle2")
                 // No text or anything, we want to handle this manually.
                 keyAction(action, event: event)
             }

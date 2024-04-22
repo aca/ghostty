@@ -868,15 +868,15 @@ pub const Surface = struct {
             break :unshifted it.nextCodepoint() orelse 0;
         };
 
-        // log.warn("TRANSLATE: action={} keycode={x} dead={} key_len={} key={any} key_str={s} mods={}", .{
-        //     action,
-        //     keycode,
-        //     result.composing,
-        //     result.text.len,
-        //     result.text,
-        //     result.text,
-        //     mods,
-        // });
+        log.warn("TRANSLATE: action={} keycode={x} dead={} key_len={} key={any} key_str={s} mods={}", .{
+            action,
+            keycode,
+            result.composing,
+            result.text.len,
+            result.text,
+            result.text,
+            mods,
+        });
 
         // We want to get the physical unmapped key to process keybinds.
         const physical_key = keycode: for (input.keycodes.entries) |entry| {
