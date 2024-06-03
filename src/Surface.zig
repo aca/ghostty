@@ -1247,6 +1247,8 @@ pub fn keyCallback(
             break :binding;
         };
 
+        // NOTES(aca): keybinding handler #1420
+
         // We only execute the binding on press/repeat but we still consume
         // the key on release so that we don't send any release events.
         log.debug("key event binding consumed={} action={}", .{ consumed, binding_action });
